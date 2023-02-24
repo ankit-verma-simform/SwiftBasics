@@ -1,3 +1,55 @@
 import UIKit
 
-var greeting = "Hello, playground"
+// 1)
+var nums = [1, 2, 3, 1]
+precondition(nums.count > 0, "Array must have atleast 1 integer element!")
+print("First and last element of Array are equal:", nums.first == nums.last)
+
+// 2)
+nums = [1, 2, 3, 4]
+precondition(nums.count > 0, "Array must have atleast 1 integer element!")
+var result = [Int](repeating: 0, count: 2 * nums.count - 1)
+result.append(nums.last!)
+print(result)
+
+// 3)
+nums = [0, 1, 2, 3]
+precondition(nums.count > 0, "Array must have atleast 1 integer element!")
+result = [Int](nums.prefix(2))
+print(result)
+
+// 4)
+nums = [0, 50, 100, 20, 80, 150]
+precondition(nums.count > 0, "Array must have atleast 1 integer element!")
+print(nums.max()!)
+
+// 5)
+nums = [0, 5, 6, 2, 10]
+result = nums.reversed()
+print(result)
+
+// 6)
+var listOfNumbers = [1, 2, 3, 10, 100]
+var divisors = [2, 5]
+prac6Loop: for number in listOfNumbers {
+    for divisor in divisors {
+        if number % divisor == 0 {
+            print(number, terminator: ", ")
+            continue prac6Loop
+        }
+    }
+}
+print()
+
+// 7)
+nums = [8, 7, 1, 2, 3, 4, 5]
+print(nums.first!)
+print(nums.last!)
+print(nums.lastIndex(of: 2)!)
+print(nums.contains(4))
+print(nums.count)
+nums.append(6)
+print(nums)
+print(nums.remove(at: 0))
+print(nums.distance(from: 1, to: 6))
+print(nums.remove(at: 0))
